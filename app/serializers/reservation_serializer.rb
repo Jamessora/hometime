@@ -29,6 +29,6 @@ class ReservationSerializer < ApplicationSerializer
 
   def self.format_price(value)
     return nil if value.nil?
-    format('%.2f', value.to_d)
+    format("%.2f", value.to_d)
   end
 end

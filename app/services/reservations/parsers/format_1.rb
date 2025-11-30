@@ -15,7 +15,7 @@ module Reservations
             email:         @data.dig(:guest, :email),
             first_name:    @data.dig(:guest, :first_name),
             last_name:     @data.dig(:guest, :last_name),
-            phone_numbers: [@data.dig(:guest, :phone)]
+            phone_numbers: [ @data.dig(:guest, :phone) ]
           },
           reservation: {
             adults:         @data[:adults],

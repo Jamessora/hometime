@@ -11,7 +11,7 @@ module Reservations
     def call
       return :format_1 if @payload.key?(:guest)
       return :format_2 if @payload.key?(:reservation)
-      
+
       raise "Unsupported payload format"
     end
   end
