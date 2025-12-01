@@ -68,6 +68,7 @@ class Reservation < ApplicationRecord
             }
 
   validate :validate_dates_and_nights
+  validate :validate_guest_count
 
   private
 
@@ -90,5 +91,18 @@ class Reservation < ApplicationRecord
     if nights.to_i != calculated_nights
       errors.add(:nights, "does not match the difference between start and end date (calculated #{calculated_nights} nights)")
     end
+  end
+
+  def validate_guest_count
+    return unless adults.present? && children.present? && guest_count.present?
+
+    expected_guest_count = adults.to_i + children.to_i
+
+    return if guest_count.to_i == expected_guest_count
+
+    errors.add(
+      :guest_count,
+      "must be equal to adults + children (expected #{expected_guest_count} guests)"
+    )
   end
 end

@@ -23,8 +23,10 @@ module Reservations
 
       parsed = parser.call(@payload)
 
-      guest = Guest.find_or_initialize_by(email: parsed[:guest][:email])
-      guest.assign_attributes(parsed[:guest])
+      email = parsed[:guest][:email].to_s.strip.downcase
+
+      guest = Guest.find_or_initialize_by(email: email)
+      guest.assign_attributes(parsed[:guest].merge(email: email))
       guest.save!
 
       reservation = guest.reservations.build(parsed[:reservation])
