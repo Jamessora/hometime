@@ -53,14 +53,14 @@ class Reservation < ApplicationRecord
   validates :payout_price, :security_price, :total_price,
             presence: true,
             numericality: { greater_than_or_equal_to: 0 }
-  
+
   validates :start_date,
             :end_date,
             format: {
               with: DATE_FORMAT,
               message: "must be in YYYY-MM-DD format"
             }
-  
+
   validates :status,
             inclusion: {
               in: ALLOWED_STATUSES,

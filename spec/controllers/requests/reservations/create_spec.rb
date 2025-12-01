@@ -112,7 +112,7 @@ RSpec.describe 'POST /reservations', type: :request do
       expect(response).to have_http_status(:unprocessable_content)
 
       body = JSON.parse(response.body, symbolize_names: true)
-      expect(body[:errors]).to eq(['is invalid'])
+      expect(body[:errors]).to eq([ 'is invalid' ])
     end
   end
 
