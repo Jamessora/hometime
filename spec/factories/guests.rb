@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :guest do
     email      { 'wayne_woodbridge@bnb.com' }

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Reservations
   class PayloadIdentifier
     def self.call(payload)

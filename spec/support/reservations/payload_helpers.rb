@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Reservations
   module PayloadHelpers
     # Format #1
