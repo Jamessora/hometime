@@ -1,5 +1,7 @@
 # Hometime Assessment
 
+This API accepts two different reservation payload formats without requiring any custom headers, flags, or parameters to identify the provider and maps both formats into one consistent structure.
+
 ### Ruby Version
 
 - Ruby 3.3.9
